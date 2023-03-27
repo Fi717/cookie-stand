@@ -1,86 +1,48 @@
-// const heading = document.getElementById("heading");
-// console.log(heading);
+let user;
 
-// varaible assigned value is a string
-// const myName = "Chris";
-
-// varaible assigned value is a number
-// let myAge = 40;
-
-// const nameAge = "Hello my name is " + myName + " and I am " + myAge + " years old";
-
-// console.log(nameAge);
-
-// varaible assigned value is a boolean
-// let isAlive = true;
-
-// varaible assigned value is a array
-// const myPets = [{}, {}, {}];
-
-// varaible assigned value is a object
-// const locations = {
-//   heading: "",
-//   location: "",
-//   highlyRated: true,
-//   price: 48,
-// };
-
-// let x = 5 + 5;
-// let y = 6 - 3;
-// let a = 2 * 2;
-// let b = 5 / 5;
-
-// let myHouseNum = myName + " " + "is showing us some javascript";
-// console.log(myName);
-
-// let x = 5;
-// const y = "5";
-
-// let number = x + y;
-// console.log(typeof number);
-
-// const demo = document.getElementById("demo");
-// console.log(demo);
-// demo.innerHTML = message;
-
-// document.getElementById("demo").innerHTML = message;
-
-// for(initialization; condition; increment){
-//  statements
-// }
-
-// string - sentence "tim"
-// number - 1
-// boolean - true or false
-// array - ["lou", "victor", "Jeremy"]
-// object - {name: "lou", age: 21,}
-
-let myFavPets = ["Dog", "Cat", "GoldFish"];
-
-// console.log(myFavPets[0]);
-// console.log(myFavPets[1]);
-// console.log(myFavPets[2]);
-
-for (let i = 0; i < myFavPets.length; i++) {
-  console.log("I love my pet " + myFavPets[i]);
+function yourName() {
+  user = prompt("What is your name?");
+  return document.write(user);
 }
 
-// while(condition){
-//  statement
-//}
+function guessANumber() {
+  let answer;
+  while (answer != 7) {
+    answer = prompt("Guess a number between 1 and 10");
 
-let n = 0;
-let x = 0;
-
-while (n < 3) {
-  n++;
-  x += n;
-  console.log(n);
-  console.log(x);
+    if (answer != 7) {
+      alert("Try Again");
+    } else {
+      alert("Congratulations, you are correct!");
+    }
+  }
 }
 
-let numberOfClick = 0;
+guessANumber();
 
-while (numberOfClicks < 5) {
-  numberOfClick++;
+function timeOfDay(param1, param2) {
+  let time = prompt("Hi " + user + ", what hour is it? (0 - 23)");
+
+  let message;
+
+  if (time < 12) {
+    message = "Good morning " + user + param1;
+  } else if (time <= 18) {
+    message = "Good afternoon " + user + param2;
+  } else if (time < 24) {
+    message = "Good night " + user;
+  } else {
+    message = "That hour does not exist " + user;
+  }
+  console.log(message);
+  return message;
+}
+
+function displayRating() {
+  let output = "";
+  let rating = prompt("Rate our cookies on a of Scale of 1-5, how many stars?");
+  for (let i = 0; i < rating; i++) {
+    output += "<img class='star' src='images/star.svg' alt='rating star'>";
+  }
+  return document.write(output);
 }
